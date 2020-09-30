@@ -1,0 +1,103 @@
+.title {
+    position: relative;
+    font-style: inherit;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: limegreen;
+    width: 15%;
+    top: -20px;
+    
+    
+}
+
+.addbut {
+    position:relative;
+    transition: .5s ease;
+    top: -78px;
+    left: 20%;
+    right: -420px;
+    width: 50px;
+}
+
+.delbut {
+    position:relative;
+    transition: .5s ease;
+    top: -78px;
+    left: 80%;
+    right: -420px;
+    width: 50px;
+}
+
+.search {
+    position: relative;
+    left: -110px;
+    width: 110px;
+    top: -50px;
+}
+
+.searchbut {
+    position: relative;
+    width: 28px;
+    left: -110px;
+    top: -47px;
+    border: 0px;
+    background-color: white;
+}
+
+.list {
+    border-style: double;
+    width: 177px;
+    height: 500px;
+    list-style-type: none;
+    top: -30px;
+    position: relative;
+    left: -2px;
+    border-radius: 8px;
+    border-color: lightseagreen; 
+    margin: 0;
+    padding: 0;  
+}
+
+.saved {
+    position: relative;
+    border-style: outset;
+    width: 161px;
+    height: 35px;
+    top: 8px;
+    left: 5px;
+    background-color: ivory;
+    border-color: aliceblue;
+}
+
+.txtdiv {
+    position: relative;
+    top: -524px;
+    left: 240px;
+}
+
+.txtarea {
+    position: relative; 
+    background-image: -webkit-linear-gradient(left, #8bc34a 10px, #e91e6300 10px),
+     -webkit-linear-gradient(right, #fff8bd 10px, transparent 10px),
+      -webkit-linear-gradient(#ffeb3b47 30px, #ccc 30px, #ccc 31px, #ffeb3b00 31px);
+    background-size: 100% 100%, 100% 100%, 100% 31px;
+    border-radius: 10px;
+    box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.1);
+    line-height: 31px;
+    font-family: Arial, Helvetica, Sans-serif;
+    padding: 8px;
+    visibility: hidden;
+}
+
+.notesaver { 
+    position: relative;
+    top: 26px;
+    right: 60px;
+    font-family: monospace;
+    border-color: lightcyan;
+    width: 59px;
+    border-radius: 8px;
+    background-color: azure;
+    visibility: hidden;
+}
+
+
