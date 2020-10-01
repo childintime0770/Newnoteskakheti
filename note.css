@@ -77,7 +77,7 @@
 .txtarea {
     position: relative; 
     background-image: -webkit-linear-gradient(left, #8bc34a 10px, #e91e6300 10px),
-     -webkit-linear-gradient(right, #fff8bd 10px, transparent 10px),
+      -webkit-linear-gradient(right, #fff8bd 10px, transparent 10px),
       -webkit-linear-gradient(#ffeb3b47 30px, #ccc 30px, #ccc 31px, #ffeb3b00 31px);
     background-size: 100% 100%, 100% 100%, 100% 31px;
     border-radius: 10px;
