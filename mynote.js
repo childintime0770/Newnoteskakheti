@@ -9,6 +9,7 @@ let savedNote;
 let firstWord;  
 let dateSpan;
 let selectedNote = null;
+window.selectedNote = selectedNote;
 
 let topDate = document.getElementById('topdate');
 
@@ -38,6 +39,7 @@ function deleteNote() {
     notes = notes.filter(function(n){
        return n != selectedNote; 
     });
+    console.log(selectedNote);
     document.getElementById(selectedNote.id).remove();
     clearTextarea();
 }
@@ -69,6 +71,7 @@ function editNote(event){
     showTextarea();
 }
 
+
 noteSaverButton.onclick = function() {
     noteElement = document.createElement('li');
     notelist.appendChild(noteElement);
@@ -84,14 +87,14 @@ noteSaverButton.onclick = function() {
     dateSpan.setAttribute('class', 'time');
     dateSpan.textContent = (new Date()).toLocaleTimeString();
 
+    deleteNote();
     clearTextarea();
-
+    
     const note = new NoteObject(savedNote);
     notes.push(note);
     console.log(notes);
     noteElement.id = note.id;
-
-
+    
 }
 
 removeButton.addEventListener('click', deleteNote);
