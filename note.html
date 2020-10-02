@@ -9,27 +9,29 @@
 </head>
 <body>
     
-    <h1 id="title" class="title">NOTES</h1>
-    
-    
-    <button id="addbut" class="addbut"> <img src="plusicon24pxgreen.png" alt="New note button"> </button>
-   
-    <button id="delbut" class="delbut"> <img src="deleteicon24px.png" alt="Delete note button"> </button>
-    
+    <div class="firstdiv">
+        <h1 id="title" class="title">NOTES</h1>
+        <button id="addbut" class="addbut"> <img src="plusicon24pxgreen.png" alt="New note button"> </button>
+        <p id="topdate" class="topdate"></p>
+        <button id="delbut" class="delbut"> <img src="deleteicon24px.png" alt="Delete note button"> </button>
 
-   
-    <input id="search" class="search" type="text" placeholder="Search..">
+    </div>
 
-    <button id="searchbut" class="searchbut"> <img src="searchicon16px.png" alt="Search button"> </button>
-    
-    
 
-    <ul id="list" class="list"> </ul>
+    <div class="left">
+        <div class="search-wrapper">
+            <input id="search" class="search" type="text" placeholder="Search..">
+            <button id="searchbut" class="searchbut"> <img src="searchicon16px.png" alt="Search button"> </button>
+        </div>
+        
+        <ul id="list" class="list"> </ul>
+    </div>
 
-    <txtarea id="txtdiv" class="txtdiv">
-        <textarea name="new note" id="txtarea" class="txtarea" cols="30" rows="10"></textarea>
+    <div id="txtdiv" class="right">
+        <textarea name="new note" id="txtarea" class="txtarea"></textarea>
         <button id="notesaver" class="notesaver">Save</button>
-    </txtarea>
+    </div>
+
         
     
     <script src="mynote.js"></script>

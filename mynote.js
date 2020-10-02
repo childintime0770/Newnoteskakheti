@@ -1,36 +1,101 @@
 let addButton = document.getElementById('addbut');
-let maneTextarea = document.getElementById('txtarea');
+let mainTextarea = document.getElementById('txtarea');
 let noteSaverButton = document.getElementById('notesaver');
+let removeButton = document.getElementById('delbut');
 
 let notelist = document.getElementById('list');
-let note1;
+let noteElement;
 let savedNote;
 let firstWord;  
-let dateParagraph;
-let presentTime = new Date(); 
+let dateSpan;
+let selectedNote = null;
 
+let topDate = document.getElementById('topdate');
 
-addButton.onclick = function() {
-    maneTextarea.style.visibility = 'visible';
-    noteSaverButton.style.visibility = 'visible';
-    note1 = document.createElement('li');
-    notelist.appendChild(note1);
-    note1.setAttribute('class', 'saved');
-    
+let notes = [];
+
+function NoteObject(text) {
+    this.id = Date.now();
+    this.text = text;
 }
 
+
+getTime();
+
+setInterval(() => {
+    getTime();
+}, 1000);
+
+function getTime(){
+    let presentTime = new Date();
+    topDate.textContent = `${presentTime.toLocaleDateString()} ${presentTime.toLocaleTimeString()}`; 
+}
+
+function deleteNote() {
+    if(selectedNote == null) {
+        return;
+    }
+    notes = notes.filter(function(n){
+       return n != selectedNote; 
+    });
+    document.getElementById(selectedNote.id).remove();
+    clearTextarea();
+}
+
+function showTextarea() {
+    mainTextarea.style.visibility = 'visible';
+    noteSaverButton.style.visibility = 'visible';  
+    mainTextarea.focus();
+}
+
+function clearTextarea() {
+    mainTextarea.value = '';
+    mainTextarea.style.visibility = 'hidden';
+    noteSaverButton.style.visibility = 'hidden';
+    selectedNote = null;
+}
+
+addButton.onclick = function(){
+    mainTextarea.value = "";
+    showTextarea();
+    selectedNote = null;
+}
+
+function editNote(event){
+    selectedNote = notes.find(function(n){
+        return n.id == event.currentTarget.id;
+    })
+    mainTextarea.value = selectedNote.text;
+    showTextarea();
+}
 
 noteSaverButton.onclick = function() {
-    savedNote = maneTextarea.value;
-    firstWord = savedNote.split('\n', 1)[0];
-    note1.textContent = firstWord;
-    dateParagraph = document.createElement('p');
-    note1.appendChild(dateParagraph);
-    dateParagraph.setAttribute('class', 'time');
+    noteElement = document.createElement('li');
+    notelist.appendChild(noteElement);
+    noteElement.setAttribute('class', 'saved');
+    noteElement.addEventListener('click', editNote);
+
+    savedNote = mainTextarea.value;
+    firstWord = savedNote.substring(0, 20) + '...'
     
+    noteElement.textContent = firstWord;
+    dateSpan = document.createElement('span');
+    noteElement.appendChild(dateSpan);
+    dateSpan.setAttribute('class', 'time');
+    dateSpan.textContent = (new Date()).toLocaleTimeString();
+
+    clearTextarea();
+
+    const note = new NoteObject(savedNote);
+    notes.push(note);
+    console.log(notes);
+    noteElement.id = note.id;
 
 
 }
+
+removeButton.addEventListener('click', deleteNote);
+
 
 
 

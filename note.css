@@ -1,56 +1,77 @@
+body {
+    padding: 0;
+    margin: 0;
+    margin-right: 200px;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+      margin-right: 0;
+    }
+  }
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
 .title {
     position: relative;
     font-style: inherit;
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: limegreen;
-    width: 15%;
-    top: -20px;
+    width: 200px;
     
     
 }
 
+.firstdiv {
+    padding: 5px 18px 0 5px;
+}
+
+.firstdiv button, .firstdiv p, .firstdiv h1 {
+    display: inline-block;
+}
+
+.topdate {
+    width: calc(100% - 332px);
+    text-align: center;
+    padding: 0px 10px;
+}
+
 .addbut {
-    position:relative;
-    transition: .5s ease;
-    top: -78px;
-    left: 20%;
-    right: -420px;
     width: 50px;
 }
 
 .delbut {
-    position:relative;
-    transition: .5s ease;
-    top: -78px;
-    left: 80%;
-    right: -420px;
     width: 50px;
 }
 
 .search {
-    position: relative;
-    left: -110px;
     width: 110px;
-    top: -50px;
+}
+
+.search-wrapper {
+    padding: 10px;
 }
 
 .searchbut {
-    position: relative;
     width: 28px;
-    left: -110px;
-    top: -47px;
     border: 0px;
     background-color: white;
+    vertical-align: top;
+    cursor: pointer;
 }
 
 .list {
     border-style: double;
     width: 177px;
-    height: 500px;
+    min-height: 500px;
     list-style-type: none;
-    top: -30px;
-    position: relative;
-    left: -2px;
     border-radius: 8px;
     border-color: lightseagreen; 
     margin: 0;
@@ -60,18 +81,15 @@
 .saved {
     position: relative;
     border-style: outset;
-    width: 161px;
-    height: 35px;
-    top: 8px;
-    left: 5px;
-    background-color: ivory;
+    background-color: white;
     border-color: aliceblue;
+    margin-top: 13px;
+    margin-left: 2px;
+    padding-bottom: 10px;
 }
 
 .txtdiv {
-    position: relative;
-    top: -524px;
-    left: 240px;
+    
 }
 
 .txtarea {
@@ -86,18 +104,42 @@
     font-family: Arial, Helvetica, Sans-serif;
     padding: 8px;
     visibility: hidden;
+    height: 500px;
+    width: 100%;
+    resize: none;
 }
 
 .notesaver { 
-    position: relative;
-    top: 26px;
-    right: 60px;
     font-family: monospace;
     border-color: lightcyan;
-    width: 59px;
     border-radius: 8px;
     background-color: azure;
     visibility: hidden;
+    position: absolute;
+    bottom: -30px;
+    right: -15px;
+    padding: 4px 15px;
 }
 
+.time {
+    top: 20px;
+    background-color: azure;
+    border-radius: 3px;
+    position: absolute;
+    left: 5px;
+}
 
+.left {
+    width: 183px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.right {
+    width: calc(100% - 233px);
+    display: inline-block;
+    vertical-align: top;
+    min-height: 500px;
+    padding: 40px 0 0 12px;
+    position: relative;
+}
