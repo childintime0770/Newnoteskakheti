@@ -73,12 +73,13 @@ button {
 .list {
     border-style: double;
     width: 177px;
-    min-height: 500px;
+    height: 500px;
     list-style-type: none;
     border-radius: 8px;
     border-color: lightseagreen; 
     margin: 0;
-    padding: 0;  
+    padding: 0; 
+    overflow: scroll; 
 }
 
 .saved {
@@ -92,9 +93,7 @@ button {
     font-family: system-ui;
 }
 
-.txtdiv {
-    
-}
+
 
 .txtarea {
     position: relative; 
